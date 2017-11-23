@@ -16,13 +16,13 @@ public class DefaultDataCacheImpl implements DataCache {
 
   @Override
   public void store(final DataDTO dataDTO) {
-    LOGGER.debug("DataDTO: {}", dataDTO);
+    LOGGER.info("DataDTO: {}", dataDTO);
     map.put(dataDTO.getId(), dataDTO);
   }
 
   @Override
   public void delete(final String id) {
-    LOGGER.debug("Id: {}", id);
+    LOGGER.info("Id: {}", id);
     map.remove(id);
   }
 }

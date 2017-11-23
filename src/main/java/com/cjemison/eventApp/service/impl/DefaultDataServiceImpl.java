@@ -5,6 +5,7 @@ import com.cjemison.eventApp.service.DataService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,14 +22,16 @@ public class DefaultDataServiceImpl implements DataService {
   }
 
   @Override
+  @Async
   public void store(final DataDTO dataDTO) {
-    LOGGER.debug("DataDTO: {}", dataDTO);
+    LOGGER.info("DataDTO: {}", dataDTO);
     this.list.add(dataDTO);
   }
 
   @Override
+  @Async
   public void delete(final String id) {
-    LOGGER.debug("Id: {}", id);
+    LOGGER.info("Id: {}", id);
     int index = 0;
     for (int i = 0; i < list.size(); i++) {
       if (list.get(i).getId().equals(id)) {
