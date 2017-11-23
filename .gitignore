@@ -43,7 +43,5 @@ hs_err_pid*
 **/*.iml
 .gradle/
 .idea/
-build.gradle
 eventapp.iml
 out/
-src/
